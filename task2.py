@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("titanic.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv")
 
 # Show first 5 rows
 print(df.head())
@@ -23,3 +23,17 @@ df = df.drop_duplicates()
 df.to_csv("cleaned_dataset.csv", index=False)
 
 print("\nData Cleaning Completed Successfully!")
+print(df.head())
+print(df.isnull().sum())
+print(df.duplicated().sum())
+print("Loaded Data:")
+print(df.head())
+
+print("\nDataset Info:")
+df.info()
+
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+print("\nDuplicate Records:")
+print(df.duplicated().sum())
